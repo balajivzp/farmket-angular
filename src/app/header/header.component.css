@@ -1,0 +1,9 @@
+.navbar-brand {
+  margin-left: 20px;
+}
+a {
+  cursor: pointer;
+}
+a:hover {
+  background-color: #36d1dc; 
+}
