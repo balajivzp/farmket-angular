@@ -43,14 +43,14 @@ getAuthenticatedToken() {
 }
 
   isUserLoggedIn() {
-    let user = localStorage.getItem("USER")
+    let user = sessionStorage.getItem("USER")
     return !(user === null)
   }
 
   logout(){
-    localStorage.removeItem("USER")
-    localStorage.removeItem("ROLE")
-    localStorage.removeItem("TOKEN")
+    sessionStorage.removeItem("USER")
+    sessionStorage.removeItem("ROLE")
+    sessionStorage.removeItem("TOKEN")
 }
 
 

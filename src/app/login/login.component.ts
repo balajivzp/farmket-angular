@@ -21,6 +21,7 @@ onLogin(form: NgForm) {
   this.authService.login(form.value.username, form.value.password)
   .subscribe(response => {
     console.log(response);
+    this.router.navigate(['/dashboard'])
   }, error => {
     this.errorMessage = "Error has occured";
   })
