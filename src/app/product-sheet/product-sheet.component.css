@@ -1,0 +1,11 @@
+
+.cardCon {
+  align-items: center;
+}
+.card {
+  box-shadow: 5px 5px 5px 0 #36d1dc;
+}
+.logBtn:hover {
+  background-color: #36d1dc;
+  color: white;
+}

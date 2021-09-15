@@ -33,6 +33,13 @@ export class AuthService {
        user
      });
   }
+  getUserId(username:string) {
+    return 1;
+    // return this.http.get<any>(
+    //   `${API_URL}/getId/`+username
+    // );
+  }
+
   getAuthenticatedUser() {
   return sessionStorage.getItem("USER")
 }
@@ -46,6 +53,7 @@ getAuthenticatedToken() {
     let user = sessionStorage.getItem("USER")
     return !(user === null)
   }
+
 
   logout(){
     sessionStorage.removeItem("USER")
