@@ -1,7 +1,34 @@
 .card {
-  box-shadow: 5px 5px 5px 0 #36d1dc;
+  box-shadow: 5px 5px 5px 0 #55d46a;
+  background-color: rgb(79, 202, 79);
 }
 .logBtn:hover {
-  background-color: #36d1dc;
+  background-color: #63c760;
   color: white;
+}
+.head{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-weight: 5000;
+  font-size:xx-large;
+  font-style: oblique;
+  color: rgb(33, 80, 33);
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+}
+.logo {
+  width: 150px;
+  height: 200px;
+  margin-top: 2px;
+  margin-left: 30px;
+  margin-right:800px;
+  padding:10px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+}
+.cont{
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK8MXP87t0SmtqibWwPULXiRmw_5PO56MYzw&usqp=CAU");
 }
