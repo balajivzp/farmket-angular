@@ -39,6 +39,10 @@ export class AuthService {
     //   `${API_URL}/getId/`+username
     // );
   }
+  getCurrUserId() {
+    let username = this.getAuthenticatedUser();
+    return this.getUserId(username);
+  }
 
   getAuthenticatedUser() {
   return sessionStorage.getItem("USER")

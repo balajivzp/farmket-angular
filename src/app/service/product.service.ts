@@ -23,4 +23,19 @@ export class ProductService {
         //   `${API_URL}/getMarkets`
         // );
   }
+
+  getProductDetailById(id: number) {
+    let productDetails : ProductSheet[] = [{
+      productName: "Tomoto",
+      quantity: "10" ,
+      marketId: 1,
+      farmerId: 2,
+      date: new Date().toString(),
+      isApproved: false
+    }]
+    return productDetails;
+    // return this.http.get<any>(
+    //   `${API_URL}/getProductDetail/`+id
+    // );
+  }
 }

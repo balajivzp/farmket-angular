@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductSheetComponent } from './product-sheet/product-sheet.component';
+import { CheckStatusComponent } from './check-status/check-status.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductSheetComponent } from './product-sheet/product-sheet.component';
     FooterComponent,
     SignupComponent,
     DashboardComponent,
-    ProductSheetComponent
+    ProductSheetComponent,
+    CheckStatusComponent
   ],
   imports: [
     FormsModule,
