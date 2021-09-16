@@ -1,10 +1,42 @@
 .card {
-  box-shadow: 5px 5px 5px 0 #36d1dc;
+  box-shadow: 5px 5px 5px 0 #38c256;
+  background-color: rgb(79, 202, 79);
+ 
 }
 .logBtn:hover {
-  background-color: #36d1dc;
+  background-color: #5bb95b;
   color: white;
 }
 .cardContainer {
-  margin-top: 30px;
+  margin-top: 10px;
+}
+.head{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-weight: 5000;
+  font-size:xx-large;
+  font-style: oblique;
+  color: green;
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
+}
+.logo {
+  width: 150px;
+  height: 200px;
+  margin-top: 2px;
+  margin-left: 30px;
+  margin-right:800px;
+  padding:10px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+}
+.cont{
+  background-image: url(
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXX4WrGXENiWHf-OMiY3i7uJe6MkiWUNe6GQ&usqp=CAU"
+  );
+  max-height: 70%;
+  
 }

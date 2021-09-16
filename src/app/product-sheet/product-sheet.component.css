@@ -1,11 +1,46 @@
-
+.container{
+  background-image: url("https://images.pexels.com/videos/2758322/free-video-2758322.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  width:5000px;
+  height: 500px;
+}
+.head{
+  width: 100%;
+  margin-top: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-weight: 5000;
+  font-size:xx-large;
+  font-style: oblique;
+  color: green;
+  text-align: center;
+}
+.logo {
+  width: 150px;
+  height: 200px;
+  margin-top: 2px;
+  margin-left: 30px;
+  margin-right:800px;
+  padding:10px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+}
 .cardCon {
-  align-items: center;
+  width: 90%;
+  padding: 100px;
+  margin-left: 300px ;
+  margin-right: 700px ;
+  margin-top:50%;
+  margin-bottom:100%;
+  text-align: center;
+
 }
 .card {
-  box-shadow: 5px 5px 5px 0 #36d1dc;
+  box-shadow: 5px 5px 5px 0 #36dc89;
+  background-color: rgb(97, 202, 97);
 }
 .logBtn:hover {
-  background-color: #36d1dc;
-  color: white;
+  background-color: #36dc68;
+  color: rgb(245, 248, 245);
 }
