@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common'
 import { ProductSheet } from '../model/ProductSheet';
 import { ProductService} from '../service/product.service';
 import { AuthService} from '../service/auth.service'
@@ -19,7 +20,7 @@ export class ProductSheetComponent implements OnInit {
 
   productSheet: ProductSheet;
 
-  constructor(private productService: ProductService, private authService: AuthService) { }
+  constructor(private productService: ProductService, private authService: AuthService, private datepipe: DatePipe) { }
 
   ngOnInit(): void {
     this.marketDetails = this.productService.getMarketDetails();
@@ -28,18 +29,17 @@ export class ProductSheetComponent implements OnInit {
     //     this.marketDetails = res;
     //   }
     // )
-    this.username = sessionStorage.getItem("USER");
     // this.authService.getUserId(this.username).subscribe(
     //   response => {
     //     this.userId = response;
     //   }
     // )
-    this.userId = this.authService.getUserId(this.username);
+    this.userId = this.authService.getCurrUserId();
   }
 
   onSubmit(form: NgForm) {
     this.productSheet = form.value;
-    this.productSheet.date = new Date().toString();
+    this.productSheet.date =this.datepipe.transform(new Date(), 'yyyy-MM-dd');
     this.productSheet.farmerId = this.userId;
     this.productSheet.isApproved = false;
     console.log(this.productSheet);

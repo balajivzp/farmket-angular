@@ -8,16 +8,22 @@ import { AuthService} from '../service/auth.service'
 })
 export class DashboardComponent implements OnInit {
   name: string;
-  user: string;
+  role: string;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.name = "balaji";
-    this.user = "FARMER";
+    this.role = "FARMER";
+    // this.authService.getUserRole(sessionStorage.getItem('USER')).subscribe(
+    //   res => {
+    //     sessionStorage.setItem("ROLE", res);
+    //     this.role = res;
+    //   }
+    // )
     //   this.name = this.authService.getAuthenticatedUser();
   }
 isFarmer() {
-  return this.user === 'FARMER';
+  return this.role === 'FARMER';
 }
 }

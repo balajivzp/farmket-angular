@@ -39,9 +39,21 @@ export class AuthService {
     //   `${API_URL}/getId/`+username
     // );
   }
+  getMarketName(id) {
+    return " A1 Markets"
+    // return this.http.get<string>(
+    //   `${API_URL}/getMarketname/${id}`
+    // )
+  }
+
   getCurrUserId() {
     let username = this.getAuthenticatedUser();
     return this.getUserId(username);
+  }
+  getUserRole(username) {
+    return this.http.get<string>(
+      `${API_URL}/getUserRole/${username}`
+    )
   }
 
   getAuthenticatedUser() {

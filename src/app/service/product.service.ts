@@ -3,12 +3,15 @@ import { ProductSheet } from '../model/ProductSheet'
 import { API_URL } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor( ) { }
+
+
 
   saveProduct(productSheet: ProductSheet) {
     console.log(productSheet);
@@ -20,7 +23,7 @@ export class ProductService {
     ];
       return details;
         // return this.http.get<any>(
-        //   `${API_URL}/getMarkets`
+        //   `${API_URL}/getMarketList`
         // );
   }
 
@@ -35,7 +38,7 @@ export class ProductService {
     }]
     return productDetails;
     // return this.http.get<any>(
-    //   `${API_URL}/getProductDetail/`+id
+    //   `${API_URL}/getProductDetail/${id}`
     // );
   }
 }
