@@ -1,10 +1,14 @@
 .card {
-  box-shadow: 5px 5px 5px 0 #36d1dc;
+  box-shadow: 5px 5px 5px 0 #4ae26b;
 }
 .logBtn:hover {
-  background-color: #36d1dc;
+  background-color: #67d676;
   color: white;
 }
 .cardCont {
   margin-top: 100px;
+}
+.card-header {
+  background-color: rgb(79, 161, 79);
+  color:honeydew;
 }
