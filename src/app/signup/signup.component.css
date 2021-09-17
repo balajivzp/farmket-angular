@@ -10,9 +10,9 @@
   font-family:Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-weight: 5000;
-  font-size:xx-large;
+  
   font-style: oblique;
-  color: rgb(33, 80, 33);
+  color: rgb(70, 173, 70);
   text-align: center;
   width: 100%;
   margin-top: 5px;
@@ -30,5 +30,14 @@
   background-attachment: fixed;
 }
 .cont{
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK8MXP87t0SmtqibWwPULXiRmw_5PO56MYzw&usqp=CAU");
+background-image: url("https://previews.123rf.com/images/ntlstudio/ntlstudio2002/ntlstudio200200466/141101985-urban-gardening-2d-vector-web-banners-posters-set-gardeners-horticulturists-flat-characters-on-carto.jpg");
+}
+.container{
+  margin-top: 5px;
+  margin-bottom: 70px;
+}
+.cont{
+  margin-top:10px;
+  margin-bottom: 80px;
+  width:95%;
 }
