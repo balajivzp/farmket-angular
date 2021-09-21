@@ -33,17 +33,14 @@ export class ProductService {
   }
 
   getProductDetailById(id: number) {
-    let productDetails : ProductSheet[] = [{
-      productName: "Tomoto",
-      quantity: "10" ,
-      marketId: 1,
-      farmerId: 2,
-      date: new Date().toString(),
-      isApproved: false
-    }]
-    return productDetails;
-    // return this.http.get<any>(
-    //   `${API_URL}/getProductDetail/${id}`
-    // );
+    return this.http.get<any>(
+      `${API_URL}/productsheet/getProductDetail/${id}`
+    );
+  }
+
+  deleteProduct(id) {
+    return this.http.delete(
+      `${API_URL}/deleteProduct/${id}`
+    )
   }
 }

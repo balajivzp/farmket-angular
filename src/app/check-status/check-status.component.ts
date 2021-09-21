@@ -15,21 +15,38 @@ export class CheckStatusComponent implements OnInit {
   constructor(private authService: AuthService, private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.userId = this.authService.getCurrUserId();
-    this.productdetails = this.productService.getProductDetailById(this.userId);
+  this.authService.getUserId(this.authService.getAuthenticatedUser()).subscribe(
+    res => {
+      this.userId = res.id;
+    }
+  )
+  this.refreshList();
     console.log(this.productdetails);
+  }
+  refreshList() {
+    this.productService.getProductDetailById(this.userId).subscribe(
+      res => {
+        this.productdetails = res;
+      }
+    );
   }
 
   getMarket(id) {
-    return this.authService.getMarketName(id);
-    // let marketName;
-    // this.authService.getMarketName(id).subscribe(
-    //   res => {
-    //     marketName = res;
-    //   }
-    // )
-    // return marketName;
-    //
+    let marketName;
+    this.authService.getMarketName(id).subscribe(
+      res => {
+        marketName = res.name;
+      }
+    )
+    return marketName;
+
+  }
+  onDelete(id) {
+    this.productService.deleteProduct(id).subscribe(
+      res => {
+        this.refreshList();
+      }
+    )
   }
 
 }

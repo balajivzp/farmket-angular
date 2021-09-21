@@ -28,17 +28,13 @@ export class ProductSheetComponent implements OnInit {
          this.marketDetails = res;
        }
      )
-    // this.productService.getMarketDetails().subscribe(
-    //   res => {
-    //     this.marketDetails = res;
-    //   }
-    // )
-    // this.authService.getUserId(this.username).subscribe(
-    //   response => {
-    //     this.userId = response;
-    //   }
-    // )
-    this.userId = this.authService.getCurrUserId();
+
+    this.authService.getUserId(this.username).subscribe(
+      response => {
+        this.userId = response.id;
+      }
+    )
+
   }
 
   onSubmit(form: NgForm) {

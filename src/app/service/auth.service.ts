@@ -42,22 +42,18 @@ export class AuthService {
      });
   }
   getUserId(username:string) {
-    return 1;
-    // return this.http.get<any>(
-    //   `${API_URL}/getId/`+username
-    // );
+    return this.http.get<any>(
+      `${API_URL}/getId/${username}`
+    );
   }
   getMarketName(id) {
-    return " A1 Markets"
-    // return this.http.get<string>(
-    //   `${API_URL}/getMarketname/${id}`
-    // )
+  
+    return this.http.get<any>(
+      `${API_URL}/getMarketName/${id}`
+    )
   }
 
-  getCurrUserId() {
-    let username = this.getAuthenticatedUser();
-    return this.getUserId(username);
-  }
+
   getUserRole(username) {
      this.http.get<any>(
       `${API_URL}/users/getUserRole/${username}`
