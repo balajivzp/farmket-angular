@@ -22,7 +22,12 @@ export class ProductSheetComponent implements OnInit {
   constructor(private productService: ProductService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.marketDetails = this.productService.getMarketDetails();
+     this.productService.getMarketDetails().subscribe(
+       res => {
+         console.log(res)
+         this.marketDetails = res;
+       }
+     )
     // this.productService.getMarketDetails().subscribe(
     //   res => {
     //     this.marketDetails = res;
@@ -42,7 +47,11 @@ export class ProductSheetComponent implements OnInit {
     this.productSheet.farmerId = this.userId;
     this.productSheet.isApproved = false;
     console.log(this.productSheet);
-    this.productService.saveProduct(this.productSheet);
+    this.productService.saveProduct(this.productSheet.farmerId,this.productSheet.marketId,this.productSheet.productName,this.productSheet.quantity,this.productSheet.date,this.productSheet.isApproved).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
 
     // this.productService.saveProduct(this.productSheet).subscribe(
     //   res => {

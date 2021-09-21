@@ -9,22 +9,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
 
-  constructor( ) { }
+  constructor(private http:HttpClient ) { }
 
 
 
-  saveProduct(productSheet: ProductSheet) {
-    console.log(productSheet);
-    return "Saved success ";
+  saveProduct(farmerId, marketId,productName,quantity,date,isApproved) {
+    return this.http.post<any>(
+      `${API_URL}/productsheet/saveProductSheet`,
+      {
+        farmerId,
+        marketId,
+        productName,
+        quantity,
+        date,
+        isApproved
+      }
+    )
   }
   getMarketDetails() {
-      let  details =  [{id: 2, name: "A1 Vegetables" },
-      {id: 3, name: "K.G Market"}
-    ];
-      return details;
-        // return this.http.get<any>(
-        //   `${API_URL}/getMarketList`
-        // );
+    return this.http.get<any>(
+      `${API_URL}/users/getMarketList`
+    )
   }
 
   getProductDetailById(id: number) {

@@ -5,26 +5,26 @@
 <div class="cardCont">
   <div class="row">
     <div class="col-md-4">
-      <div *ngIf="isFarmer()"  class="card " style="width: 20rem;">
+      <div  *ngIf="this.authService.getAuthenticatedUserRole()==='FARMER'"  class="card " style="width: 20rem;">
           <h5 class="card-header text-center ">Product Sheet</h5>
           <img class="card-img-top" src="https://godotmarketplace.com/wp-content/uploads/2020/03/sGGMJlc.png" alt="Card image cap">
           <div class="card-body">
           <p class="card-text">Fill Product sheet for your goods with correct quantity</p>
-          <a class="  d-flex btn btn-outline-primary justify-content-center logBtn">Go</a>
+          <a routerLink="/productSheet" class="  d-flex btn btn-outline-primary justify-content-center logBtn">Go</a>
          </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div *ngIf="isFarmer()" class="card " style="width: 20rem;">
+      <div *ngIf="this.authService.getAuthenticatedUserRole()==='FARMER'" class="card " style="width: 20rem;">
           <h5 class="card-header text-center">Check Status</h5>
           <img class="card-img-top" src="https://media.istockphoto.com/vectors/web-vector-id1189405233?k=20&m=1189405233&s=612x612&w=0&h=YTs1jQnMtBWFypt64kBZK39KRRyFTf5Ns1SPqQucKdY=" alt="Card image cap">
           <div class="card-body">
           <p class="card-text">Check your recent product sheet status and edit product sheet</p>
-          <a class="  d-flex btn btn-outline-primary justify-content-center logBtn">Go</a>
+          <a routerLink="/status" class="  d-flex btn btn-outline-primary justify-content-center logBtn">Go</a>
          </div>
       </div>
     </div>
-    <div *ngIf="isFarmer()" class="col-md-4">
+    <div  *ngIf="this.authService.getAuthenticatedUserRole()==='FARMER'" class="col-md-4">
       <div class="card " style="width: 20rem;">
           <h5 class="card-header text-center">Farmket Wallet</h5>
           <img class="card-img-top" src="https://www.trusselltrust.org/wp-content/uploads/sites/2/2020/11/tfc-wallet-icon@2x.png" alt="Card image cap">

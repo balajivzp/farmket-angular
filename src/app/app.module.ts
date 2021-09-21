@@ -12,6 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductSheetComponent } from './product-sheet/product-sheet.component';
 import { CheckStatusComponent } from './check-status/check-status.component';
+import { HttpInterceptorService } from './service/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { CheckStatusComponent } from './check-status/check-status.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
