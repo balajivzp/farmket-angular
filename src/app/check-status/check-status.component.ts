@@ -18,15 +18,19 @@ export class CheckStatusComponent implements OnInit {
   this.authService.getUserId(this.authService.getAuthenticatedUser()).subscribe(
     res => {
       this.userId = res.id;
+      console.log(this.userId);
+      this.refreshList();
+      console.log("HEllo");
     }
   )
-  this.refreshList();
+
     console.log(this.productdetails);
   }
   refreshList() {
     this.productService.getProductDetailById(this.userId).subscribe(
       res => {
         this.productdetails = res;
+        console.log(this.productdetails);
       }
     );
   }
@@ -36,6 +40,7 @@ export class CheckStatusComponent implements OnInit {
     this.authService.getMarketName(id).subscribe(
       res => {
         marketName = res.name;
+        console.log(marketName);
       }
     )
     return marketName;

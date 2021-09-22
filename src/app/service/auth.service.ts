@@ -43,7 +43,7 @@ export class AuthService {
   }
   getUserId(username:string) {
     return this.http.get<any>(
-      `${API_URL}/getId/${username}`
+      `${API_URL}/users/getId/${username}`
     );
   }
   getMarketName(id) {

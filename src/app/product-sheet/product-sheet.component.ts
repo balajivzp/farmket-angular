@@ -29,7 +29,7 @@ export class ProductSheetComponent implements OnInit {
        }
      )
 
-    this.authService.getUserId(this.username).subscribe(
+    this.authService.getUserId(this.authService.getAuthenticatedUser()).subscribe(
       response => {
         this.userId = response.id;
       }
