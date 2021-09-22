@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductSheetComponent } from './product-sheet/product-sheet.component';
 import { CheckStatusComponent } from './check-status/check-status.component';
 import { HttpInterceptorService } from './service/http-interceptor.service';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpInterceptorService } from './service/http-interceptor.service';
     SignupComponent,
     DashboardComponent,
     ProductSheetComponent,
-    CheckStatusComponent
+    CheckStatusComponent,
+    WalletComponent
   ],
   imports: [
     FormsModule,

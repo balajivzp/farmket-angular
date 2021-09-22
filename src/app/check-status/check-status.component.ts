@@ -9,12 +9,16 @@ import { AuthService} from '../service/auth.service'
   styleUrls: ['./check-status.component.css']
 })
 export class CheckStatusComponent implements OnInit {
-  productdetails: ProductSheet[];
+  productdetails: any[];
   userId: number;
+  isFarmer = false;
+  price: number;
+  totalPRice: number;
 
-  constructor(private authService: AuthService, private productService: ProductService) { }
+  constructor(public authService: AuthService, private productService: ProductService) { }
 
   ngOnInit(): void {
+  this.isFarmer = this.authService.getAuthenticatedUserRole() === 'FARMER';
   this.authService.getUserId(this.authService.getAuthenticatedUser()).subscribe(
     res => {
       this.userId = res.id;
@@ -27,12 +31,22 @@ export class CheckStatusComponent implements OnInit {
     console.log(this.productdetails);
   }
   refreshList() {
+    if(this.isFarmer) {
     this.productService.getProductDetailById(this.userId).subscribe(
       res => {
         this.productdetails = res;
         console.log(this.productdetails);
       }
     );
+  }
+  else {
+    this.productService.getProductDetailByMarketId(this.userId).subscribe(
+      res => {
+        this.productdetails = res;
+        console.log(this.productdetails);
+      }
+    );
+  }
   }
 
   getMarket(id) {
@@ -44,6 +58,15 @@ export class CheckStatusComponent implements OnInit {
       }
     )
     return marketName;
+
+  }
+  onApprove(productSheet: any) {
+    productSheet.isApproved = true;
+    this.productService.updateProduct(productSheet.id, productSheet.farmerId, productSheet.marketId, productSheet.productName, productSheet.quantity, productSheet.date, productSheet.isApproved)
+    .subscribe(res => {
+      console.log("Succesfully updated");
+    });
+    
 
   }
   onDelete(id) {

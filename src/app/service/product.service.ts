@@ -26,6 +26,20 @@ export class ProductService {
       }
     )
   }
+  updateProduct(id, farmerId, marketId,productName,quantity,date,isApproved) {
+    return this.http.post<any>(
+      `${API_URL}/productsheet/updateProductSheet`,
+      {
+        id,
+        farmerId,
+        marketId,
+        productName,
+        quantity,
+        date,
+        isApproved
+      }
+    )
+  }
   getMarketDetails() {
     return this.http.get<any>(
       `${API_URL}/users/getMarketList`
@@ -35,6 +49,11 @@ export class ProductService {
   getProductDetailById(id: number) {
     return this.http.get<any>(
       `${API_URL}/productsheet/getProductDetail/${id}`
+    );
+  }
+  getProductDetailByMarketId(id: number) {
+    return this.http.get<any>(
+      `${API_URL}/productsheet/getMarketProductDetail/${id}`
     );
   }
 
