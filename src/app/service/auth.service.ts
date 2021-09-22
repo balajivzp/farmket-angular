@@ -52,7 +52,7 @@ export class AuthService {
       `${API_URL}/getMarketName/${id}`
     )
   }
-
+  
 
   getUserRole(username) {
      this.http.get<any>(

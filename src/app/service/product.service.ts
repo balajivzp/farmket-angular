@@ -53,7 +53,7 @@ export class ProductService {
   }
   getProductDetailByMarketId(id: number) {
     return this.http.get<any>(
-      `${API_URL}/productsheet/getMarketProductDetail/${id}`
+      `${API_URL}/productsheet/getProductDetailByMarketId/${id}`
     );
   }
 

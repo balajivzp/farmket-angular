@@ -5,9 +5,9 @@
           <th scope="col">Product name</th>
           <th scope="col">Quantity</th>
           <th scope="col">Date</th>
-          <th *ngIf="!this.authService.getAuthenticatedUserRole() === 'FARMER'" scope="col">Price (per kg)</th>
-          <th *ngIf="this.authService.getAuthenticatedUserRole() === 'FARMER'" scope="col">Market ID</th>
-          <th *ngIf="this.authService.getAuthenticatedUserRole() === 'FARMER'" scope="col">Status</th>
+          <th *ngIf="!isFarmer" scope="col">Price (per kg)</th>
+          <th *ngIf="isFarmer" scope="col">Market ID</th>
+          <th *ngIf="isFarmer" scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -16,14 +16,14 @@
           <td >{{item.productName}}</td>
           <td >{{item.quantity}}</td>
           <td >{{item.date | date: 'dd/MM/yyyy'}}</td>
-          <td *ngIf="!this.authService.getAuthenticatedUserRole() === 'FARMER'" >
+          <td *ngIf="!isFarmer" >
             <input class="form-control" type="number" name="price" [(ngModel)]="price" >
           </td>
-          <td *ngIf="this.authService.getAuthenticatedUserRole() === 'FARMER'" >{{item.marketId}}</td>
-          <td *ngIf="this.authService.getAuthenticatedUserRole() === 'FARMER'" >{{item.isApproved === false? 'Not Approved': 'Approved' }}</td>
-          <td *ngIf="this.authService.getAuthenticatedUserRole() === 'FARMER'" ><button  (click)="onDelete(item.id)" type="button" name="button" class="btn btn-danger mx-2">Delete</button></td>
-          <td *ngIf="!this.authService.getAuthenticatedUserRole() === 'FARMER'" ><button (click)="onApprove(item)"   type="button" name="button" class="btn btn-danger mx-2">Approve</button>
-            <span><td *ngIf="!this.authService.getAuthenticatedUserRole() === 'FARMER'" ><button   type="button" name="button" class="btn btn-danger mx-2">Reject</button></td></span></td>
+          <td *ngIf="isFarmer" >{{item.marketId}}</td>
+          <td *ngIf="isFarmer" >{{item.isApproved === false? 'Not Approved': 'Approved' }}</td>
+          <td *ngIf="isFarmer" ><button  (click)="onDelete(item.id)" type="button" name="button" class="btn btn-danger mx-2">Delete</button></td>
+          <td *ngIf="!isFarmer" ><button (click)="onApprove(item)"   type="button" name="button" class="btn btn-success mx-2">Approve</button>
+            <span><td *ngIf="!isFarmer" ><button   type="button" name="button" class="btn btn-danger mx-2">Reject</button></td></span></td>
         </tr>
       </tbody>
     </table>
