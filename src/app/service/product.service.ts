@@ -26,11 +26,11 @@ export class ProductService {
       }
     )
   }
-  updateProduct(id, farmerId, marketId,productName,quantity,date,isApproved) {
+  updateProduct(prodId, farmerId, marketId,productName,quantity,date,isApproved) {
     return this.http.post<any>(
-      `${API_URL}/productsheet/updateProductSheet`,
+      `${API_URL}/productsheet/saveProductSheet`,
       {
-        id,
+        prodId,
         farmerId,
         marketId,
         productName,
@@ -56,10 +56,36 @@ export class ProductService {
       `${API_URL}/productsheet/getProductDetailByMarketId/${id}`
     );
   }
+  getBalance(id) {
+    return this.http.get(
+      `${API_URL}/productsheet/getBalance/${id}`
+    )
+  }
+  saveBalance(farmerId,balance ) {
+    return this.http.post(
+      `${API_URL}/productsheet/saveBalance`,
+      {
+        farmerId,
+        balance
+      }
+     
+    )
+  }
+  updateBalance(id,farmerId,balance ) {
+    return this.http.post(
+      `${API_URL}/productsheet/saveBalance`,
+      {
+        id,
+        farmerId,
+        balance
+      }
+     
+    )
+  }
 
   deleteProduct(id) {
     return this.http.delete(
-      `${API_URL}/deleteProduct/${id}`
+      `${API_URL}/productsheet/deleteProduct/${id}`
     )
   }
 }

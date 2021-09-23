@@ -15,6 +15,7 @@ export class ProductSheetComponent implements OnInit {
   username: string;
   userId: number;
   marketDetails : any[];
+  message: string;
 
 
   productSheet: ProductSheet;
@@ -46,6 +47,7 @@ export class ProductSheetComponent implements OnInit {
     this.productService.saveProduct(this.productSheet.farmerId,this.productSheet.marketId,this.productSheet.productName,this.productSheet.quantity,this.productSheet.date,this.productSheet.isApproved).subscribe(
       res => {
         console.log(res);
+        this.message = "Product sheet submitted Successfull";
       }
     );
 
